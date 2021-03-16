@@ -18,7 +18,9 @@ class App extends React.Component {
       .then(data => {
         return data.json()},
         err => console.log(err))
-      .then(parsedData => console.log(parsedData),
+      .then(parsedData => this.setState({
+        plants: parsedData
+      }),
        err=> console.log(err))
   }
 
