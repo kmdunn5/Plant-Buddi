@@ -9,3 +9,6 @@ const User = require('../models/User');
 ///////////////////////////
 ////       Routes      ////
 ///////////////////////////
+
+
+module.exports = SESSIONS

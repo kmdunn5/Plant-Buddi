@@ -10,3 +10,5 @@ const User = require('../models/User');
 ////       Routes      ////
 ///////////////////////////
 
+
+module.exports = USERS
