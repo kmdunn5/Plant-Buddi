@@ -29,6 +29,12 @@ class Plants extends Component {
 
   render() {
     return (
+      <div>
+      <div className='search-container'>
+        <h2>Search for a Plant Buddi</h2>
+        <input type='text' placeholder = "Enter your plant's type"/>
+        <input type='submit' value='Search'/>
+        </div>
       <div className='main-content'>
         <h2>Your Buddies</h2>
         <div className='plant-item-grid'>
@@ -52,12 +58,16 @@ class Plants extends Component {
                 </div>
                 <div className='plant-item-watered'>
                   <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
+                  <div className='edit-icon-container'>
+                    <button>✏️</button>
+                  </div>
                 </div>
               </div>
             </div>
             )
           })}
         </div>
+      </div>
       </div>
     )
   }    
