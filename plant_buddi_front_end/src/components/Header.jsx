@@ -6,7 +6,10 @@ class Header extends Component {
   render() {
     return (
       <header className="header-content">
-        <h3>Header</h3>
+        <div></div>
+        <h1>Plant Buddi</h1>
+        <div></div>
+        <h4>An app to track your plants friends!</h4>
       </header>
     )
   }

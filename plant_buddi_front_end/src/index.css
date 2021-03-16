@@ -28,10 +28,19 @@ body {
 
 /* HEADER STYLES */
 
-header {
-  background-color: rgb( 116, 44, 187 );
+body {
+  background-color: #F3DFBF;
 }
 
+.header-content{
+  background-color: rgb( 116, 44, 187 );
+  text-align: center;
+}
+
+
+img {
+  width: 30%
+}
 
 
 /* FOOTER STYLES */
