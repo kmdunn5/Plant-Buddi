@@ -14,12 +14,12 @@ SESSIONS.post('/', (req, res) => {
         if (err) {
             res.status(400).json({error: err.message})
         } else if (!foundUser) {
-            res.status(200).json('?')
+            res.status(400).json({ user: '' })
         } else {
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.currentUser = foundUser
             } else {
-                res.status(200).json('?')
+                res.status(200).json(foundUser)
             }
         }
     })

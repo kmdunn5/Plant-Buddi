@@ -7,6 +7,19 @@ const Plant = require('../models/Plant')
 
 
 ///////////////////////////
+////   Authenticator   ////
+///////////////////////////
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+      return next()
+    } else {
+      res.status(400).json({ user: '' })
+    }
+}
+
+PLANTS.use(isAuthenticated);
+
+///////////////////////////
 ////       Routes      ////
 ///////////////////////////
 PLANTS.get('/', (req, res) => {

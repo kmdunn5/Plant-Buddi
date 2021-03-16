@@ -15,13 +15,18 @@ require('dotenv').config()
 const APP = express();
 const PORT = process.env.PORT;
 const DBNAME = 'plants';
+
+
+///////////////////////////
+////   Authenticator   ////
+///////////////////////////
 // const isAuthenticated = (req, res, next) => {
 //     if (req.session.currentUser) {
 //       return next()
 //     } else {
 //       res.redirect('/sessions/new')
 //     }
-//   }
+// }
 
 
 ///////////////////////////
@@ -36,9 +41,11 @@ mongoose.connection.once('open', () => {
 ///////////////////////////
 ///  Controller Config  ///
 ///////////////////////////
-const plantsController = require('./controllers/plants');
 const usersController = require('./controllers/users');
 const sessionsController = require('./controllers/sessions');
+
+// APP.use(isAuthenticated)
+const plantsController = require('./controllers/plants');
 
 
 ///////////////////////////
@@ -78,7 +85,6 @@ APP.use('sessions', sessionsController);
 ///////////////////////////
 ////       Routes      ////
 ///////////////////////////
-
 APP.listen(PORT, () => {
     console.log(`Listening on port: ${PORT} with Kae, Brittani, and Ken`);
 });
