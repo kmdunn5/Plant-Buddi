@@ -25,4 +25,10 @@ SESSIONS.post('/', (req, res) => {
     })
 })
 
+SESSIONS.delete('/', (req, res) => {
+    req.session.destroy(() => {
+        res.status(200).json({ user: '' })
+    })
+})
+
 module.exports = SESSIONS
