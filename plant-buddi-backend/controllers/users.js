@@ -9,6 +9,8 @@ const User = require('../models/User');
 ///////////////////////////
 ////       Routes      ////
 ///////////////////////////
-
+USERS.post('/', (req, res) => {
+    
+})
 
 module.exports = USERS
