@@ -1,47 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
+// import { Route, Router, Switch } from 'react-router-dom'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import Plants from './components/Plants.jsx'
 
-let baseURL = 'http://localhost:3003'
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      plants: []
-    }
-  }
-  componentDidMount(){
-    this.getPlants()
-  }
-
-  getPlants = () => {
-    fetch(baseURL + '/plants')
-      .then(data => {
-        return data.json()},
-        err => console.log(err))
-      .then(parsedData => this.setState({
-        plants: parsedData
-      }),
-       err=> console.log(err))
-  }
+class App extends Component {
 
   render() {
     return (
-      <div className='container'>
-       <h1>Plant Buddi</h1>
-          {this.state.plants.map(plant => {
-           return (
-            <div key={plant._id}>  
-              <h3> {plant.commonName} </h3>
-              <h3> {plant.scientificName} </h3>
-            </div>
-            )
-           })}
+      <div>
+        < Header />
+        < Plants />
+        < Footer />
       </div>
     )
   }    
 }
         
-
-
 
 export default App;
