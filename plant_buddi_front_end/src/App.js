@@ -12,15 +12,15 @@ class App extends React.Component {
   componentDidMount(){
     this.getPlants()
   }
+
   getPlants = () => {
     fetch(baseURL + '/plants')
       .then(data => {
         return data.json()},
         err => console.log(err))
-      .then(parsedData => 
-        this.setState({
-          plants: parsedData
-        }),
+      .then(parsedData => this.setState({
+        plants: parsedData
+      }),
        err=> console.log(err))
   }
 
