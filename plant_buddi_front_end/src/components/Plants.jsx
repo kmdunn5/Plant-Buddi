@@ -30,15 +30,34 @@ class Plants extends Component {
   render() {
     return (
       <div className='main-content'>
-        <h1>Plant Buddi</h1>
+        <h2>Your Buddies</h2>
+        <div className='plant-item-grid'>
           { this.state.plants.map( plant => {
           return (
-            <div key={ plant._id }>  
-              <h3> { plant.commonName } </h3>
-              <h3> { plant.scientificName } </h3>
+            <div key={ plant._id } className='plant-item'>
+              <div className='plant-item-img'>
+                <img src={ plant.image } alt={ plant.commonName } />
+              </div>
+              <div className='plant-item-name-content'>
+                <div className='icon-container'>
+                  <p>🍃</p>
+                </div>
+                <div className='plant-item-name'>
+                  <h3>{ plant.commonName }</h3>
+                </div>
+              </div>
+              <div className='plant-item-watered-content'>
+                <div className='icon-container'>
+                  <p>💧</p>
+                </div>
+                <div className='plant-item-watered'>
+                  <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
+                </div>
+              </div>
             </div>
             )
           })}
+        </div>
       </div>
     )
   }    
