@@ -12,7 +12,7 @@
 
 body {
   margin: 0;
-  background-color: rgb( 242, 242, 242 );
+  background-color: #F3DFBF;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -24,18 +24,31 @@ body {
   margin: 52px auto;
 }
 
-
+.plant-item {
+  /* background-color: #FBF1EF; */
+  border: 2px solid #002500;
+  border-radius: 5px;
+  width: 25%;
+}
 
 /* HEADER STYLES */
 
-header {
-  background-color: rgb( 116, 44, 187 );
+
+.header-content{
+  background-color: #598392;
+  text-align: center;
+  color: rgb(242, 242, 242);
 }
 
+
+img {
+  width: 100%
+}
 
 
 /* FOOTER STYLES */
 
 footer {
-  background-color: blue;
+  background-color: #598392;
+  color: rgb(242, 242, 242);
 }
