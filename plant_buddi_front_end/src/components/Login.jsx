@@ -19,7 +19,7 @@ class Login extends Component {
             </div>
             <div className='form-actions'>
               <button className='primary-button' type="submit">Login</button>
-              <button className='secondary-secondary' formaction='/'>Cancel</button>
+              <button className='secondary-button' formaction='/'>Cancel</button>
             </div>
           </form>
         </div>
