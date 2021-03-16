@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-const plantSchema = mongoose.Schema({
+const plantSchema = Schema({
     commonName: {type: String, required: true},
     nickName: String,
     scientificName: {type: String, required: true},
@@ -9,7 +10,11 @@ const plantSchema = mongoose.Schema({
     howOftenToWater: {type: String, default:''},
     lastFertilized: {type: String, default:''},
     lightingRequirements: {type: String, default:''},
-    notes: {type: String, default: ''}
+    notes: {type: String, default: ''},
+    owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 module.exports = mongoose.model('Plant', plantSchema)
