@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+// import { Route, Router, Switch } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Plants from './components/Plants.jsx'
@@ -11,14 +11,8 @@ class App extends Component {
     return (
       <div>
         < Header />
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/plants'>
-            < Plants />
-          </Route>
-        </Switch>
+        {/* < Home /> */}
+        < Plants />
         < Footer />
       </div>
     )
