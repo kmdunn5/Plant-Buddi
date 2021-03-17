@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import fetch from 'node-fetch'
 
 let baseURL = '';
 
@@ -30,7 +29,9 @@ class Search extends Component {
         let searchParam = this.state.search
         fetch(baseURL + '/plants/search/' + searchParam)
         .then(data => { return data.json() }, err => console.log(err))
-        .then(parsedData => console.log(parsedData), err => console.log(err));
+        .then(parsedData => this.setState({
+            foundPlants: parsedData
+        }), err => console.log(err));
     }
     
     render() {
