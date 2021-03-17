@@ -31,7 +31,7 @@ class Search extends Component {
         return (
             <div className='search-container'>
                 {this.state.addSelected ? 
-                <p>Hi</p> :
+                <AddForm plant={this.state.selectedPlant}/> :
                 <div className='plant-item-grid'>
                 {this.props.foundPlants.map(plant => {
                     return(
