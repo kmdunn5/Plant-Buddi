@@ -5,12 +5,13 @@ class Home extends Component {
 
   render() {
     return (
-      <div className='main-content'>
+      <div>
+        <div className='header-container'>
         <div className='hero'>
-          <img src="https://i.ibb.co/2y8t9HG/IMG-8461.jpg" alt="IMG-8461" border="0" className='hero-image'/>
           <div className='center-hero'>
           <h1 className='hero-header'>Plant Buddi</h1>
           <p className='large-text'>Your Plant Care Tracker</p>
+          </div>
           </div>
         </div>
         <div className='form-content'>
