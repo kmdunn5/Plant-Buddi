@@ -36,7 +36,7 @@ body {
 
 .header-content{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   background-color: #598392;
   color: rgb(242, 242, 242);
