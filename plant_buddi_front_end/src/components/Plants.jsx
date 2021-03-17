@@ -12,10 +12,12 @@ class Plants extends Component {
     this.state = {
       plants: [],
       foundPlants: [],
-      search: ''
+      search: '',
+      searchState: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAdd = this.handleAdd.bind(this)
   }
 
   componentDidMount(){
@@ -47,9 +49,19 @@ class Plants extends Component {
     .then(data => { return data.json() }, err => console.log(err))
     .then(parsedData => this.setState({
         foundPlants: parsedData.data,
-        search: ''
+        search: '',
+        searchState: true
     }), err => console.log(err));
   }
+
+  handleAdd(plant) {
+    const copyPlants = [...this.state.plants];
+    copyPlants.unshift(plant);
+    this.setState({
+        plants: copyPlants,
+        searchState: false
+    });
+  };
 
   render() {
     return (
@@ -60,8 +72,9 @@ class Plants extends Component {
             <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
             <input type="submit" value="Search"/>
           </form>
-          <Search foundPlants={this.state.foundPlants}/>
         </div>
+        {this.state.searchState ? 
+        <Search foundPlants={this.state.foundPlants} handleAdd={this.handleAdd}/> :
         <div className='main-content'>
           <h2>Your Buddies</h2>
           <div className='plant-item-grid'>
@@ -100,6 +113,7 @@ class Plants extends Component {
             })}
           </div>
         </div>
+        }
       </div>
     )
   }
