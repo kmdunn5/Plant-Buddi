@@ -19,7 +19,6 @@ body {
 .main-content {
   display: flex;
   flex-direction: column;
-  text-align: center;
   width: 80%;
   max-width: 1200px;
   margin: 52px auto;
@@ -93,4 +92,12 @@ body {
 footer {
   background-color: #598392;
   color: rgb(242, 242, 242);
+  text-align: center;
+  position: relative;
+  top: 110px;
+}
+
+a {
+  color: rgb(242, 242, 242);
+  text-decoration: none;
 }
