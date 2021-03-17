@@ -12,7 +12,8 @@ class Plants extends Component {
     this.state = {
       plants: [],
       foundPlants: [],
-      search: ''
+      search: '',
+      searchState: false
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,7 +48,8 @@ class Plants extends Component {
     .then(data => { return data.json() }, err => console.log(err))
     .then(parsedData => this.setState({
         foundPlants: parsedData.data,
-        search: ''
+        search: '',
+        searchState: true
     }), err => console.log(err));
   }
 
