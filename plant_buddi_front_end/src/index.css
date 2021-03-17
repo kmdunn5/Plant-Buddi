@@ -35,8 +35,10 @@ body {
 
 
 .header-content{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: #598392;
-  text-align: center;
   color: rgb(242, 242, 242);
 }
 
