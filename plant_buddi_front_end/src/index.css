@@ -32,6 +32,12 @@ body {
   border: 2px solid #002500;
 }
 
+.plant-item-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
 .plant-item {
   /* background-color: #FBF1EF; */
   border: 2px solid #002500;
