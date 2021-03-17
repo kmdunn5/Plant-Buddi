@@ -15,6 +15,8 @@ class Search extends Component {
             foundPlants: [],
             search: ''
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange = (e) => {
@@ -30,23 +32,25 @@ class Search extends Component {
         fetch(baseURL + '/plants/search/' + searchParam)
         .then(data => { return data.json() }, err => console.log(err))
         .then(parsedData => this.setState({
-            foundPlants: parsedData
+            foundPlants: parsedData.data,
+            search: ''
         }), err => console.log(err));
     }
     
     render() {
         return (
             <div className='search-container'>
-                <form onSubmit={() => this.handleSubmit()}>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor='search'>Search for a Plant Buddi: </label>
-                    <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={() => this.handleChange()} value={this.state.search}/>
+                    <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
                     <input type="submit" value="Search"/>
                 </form>
+                <div className='plant-item-grid'>
                 {this.state.foundPlants.map(plant => {
                     return(
-                        <div key={plant.id}>
-                            <div>
-                                <img src={plant.image_url} alt={plant.common_name}/>
+                        <div key={plant.id} className='plant-item'>
+                            <div className='plant-item-img'>
+                                <img className='card-img' src={plant.image_url} alt={plant.common_name}/>
                             </div>
                             <div>
                                 <p>{plant.common_name}</p>
@@ -54,6 +58,7 @@ class Search extends Component {
                         </div>
                     )
                 })}
+                </div>
             </div>
         )
     }
