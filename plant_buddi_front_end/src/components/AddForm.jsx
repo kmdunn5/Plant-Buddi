@@ -13,7 +13,7 @@ class AddForm extends Component {
         super(props)
         this.state = {
             nickName: '',
-            image: '',
+            image: this.props.plant.image_url,
             lastWatered: '',
             howOftenToWater: '',
             lastFertilized: '',
@@ -28,12 +28,6 @@ class AddForm extends Component {
             [e.target.id]: e.target.value
         })
     }
-
-    // handleImageChange(e) {
-    //     this.setState({
-    //         image: this.props.plant.image_url
-    //     })
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -77,7 +71,7 @@ class AddForm extends Component {
                     <label htmlFor="nickName">Nick Name: </label>
                     <input type="text" name="nickName" id="nickName" onChange={this.handleChange}/>
                     <label htmlFor="image">Image: </label>
-                    <input type="text" name="image" id="image" onChange={this.handleChange}/>
+                    <input type="text" name="image" id="image" onChange={this.handleChange} value={this.state.image}/>
                     <label htmlFor="lastWatered">Last Watered: </label>
                     <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange}/>
                     <label htmlFor="howOftenToWater">How Often To Water: </label>
