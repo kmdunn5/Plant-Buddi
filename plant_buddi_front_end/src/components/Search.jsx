@@ -37,9 +37,9 @@ class Search extends Component {
     render() {
         return (
             <div className='search-container'>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={() => this.handleSubmit()}>
                     <label htmlFor='search'>Search for a Plant Buddi: </label>
-                    <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
+                    <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={() => this.handleChange()} value={this.state.search}/>
                     <input type="submit" value="Search"/>
                 </form>
                 {this.state.foundPlants.map(plant => {
