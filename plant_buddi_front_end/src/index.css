@@ -19,6 +19,7 @@ body {
 .main-content {
   display: flex;
   flex-direction: column;
+  text-align: center;
   width: 80%;
   max-width: 1200px;
   margin: 52px auto;
@@ -60,6 +61,11 @@ body {
   position: relative;
   text-align: center;
   color: white;
+  
+}
+
+.hero-image {
+  object-fit: cover;
 }
 
 .center-hero {

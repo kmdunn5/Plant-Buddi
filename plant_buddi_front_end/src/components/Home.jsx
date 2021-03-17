@@ -16,7 +16,7 @@ class Home extends Component {
         <div className='form-content'>
         <h1>What Does Plant Buddi Do?</h1>
         <div className='feature-group'>
-          <img src="https://i.ibb.co/w4x4jFC/3df51f155b9083e5facd284384d85c70c7605e8c.jpg" alt="3df51f155b9083e5facd284384d85c70c7605e8c" border="0" alt='wild hops' className='feature-image'/>
+          <img src="https://i.ibb.co/w4x4jFC/3df51f155b9083e5facd284384d85c70c7605e8c.jpg" border="0" alt='wild hops' className='feature-image'/>
           <div className='feature-group-text'>
             <h2>Plant Buddi Do Dis</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra dictum eros, id bibendum urna maximus at. Aenean sed leo leo. Vestibulum venenatis mi in gravida ornare. Praesent nec magna sed ex dignissim vulputate. Mauris rutrum pretium rhoncus.</p>
