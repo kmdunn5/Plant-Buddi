@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Route, Router, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Plants from './components/Plants.jsx'
 import Home from './components/Home.jsx'
-import { Router } from 'react-router'
 
 class App extends Component {
 
@@ -13,8 +12,12 @@ class App extends Component {
       <div>
         < Header />
         <Switch>
-          < Plants />
-          <Home />
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path='/plants'>
+            < Plants />
+          </Route>
         </Switch>
         < Footer />
       </div>
