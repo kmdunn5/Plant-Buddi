@@ -32,7 +32,7 @@ class Plants extends Component {
       <div>
       <div className='search-container'>
         <h2>Search for a Plant Buddi</h2>
-        <input type='text' placeholder = "Enter your plant's type"/>
+        <input className='search-bar' type='text' placeholder = "Enter your plant's type"/>
         <input type='submit' value='Search'/>
         </div>
       <div className='main-content'>
