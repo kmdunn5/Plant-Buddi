@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Search from './Search'
 
 
@@ -62,46 +62,48 @@ class Plants extends Component {
             <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
             <input type="submit" value="Search"/>
           </form>
-          <Search foundPlants={this.state.foundPlants}/>
         </div>
-        <div className='main-content'>
-          <h2>Your Buddies</h2>
-          <div className='plant-item-grid'>
-            { this.state.plants.map( plant => {
-            return (
-              <div key={ plant._id } className='plant-item'>
-                <div className='plant-item-img'>
-                  <img className='card-img' src={ plant.image } alt={ plant.commonName } />
-                </div>
-                <div className='plant-item-name-content'>
-                  <div className='icon-container'>
-                    <p>🍃</p>
-                  </div>
-                  <div className='plant-item-name-content'>
-                    <div className='icon-container'>
-                      <p>🍃</p>
+        <Switch>
+            <Search foundPlants={this.state.foundPlants}/>
+            <div className='main-content'>
+              <h2>Your Buddies</h2>
+              <div className='plant-item-grid'>
+                { this.state.plants.map( plant => {
+                return (
+                  <div key={ plant._id } className='plant-item'>
+                    <div className='plant-item-img'>
+                      <img className='card-img' src={ plant.image } alt={ plant.commonName } />
                     </div>
-                    <div className='plant-item-name'>
-                      <h3>{ plant.commonName }</h3>
-                    </div>
-                  </div>
-                  <div className='plant-item-watered-content'>
-                    <div className='icon-container'>
-                      <p>💧</p>
-                    </div>
-                    <div className='plant-item-watered'>
-                      <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
-                      <div className='edit-icon-container'>
-                        <button>✏️</button>
+                    <div className='plant-item-name-content'>
+                      <div className='icon-container'>
+                        <p>🍃</p>
+                      </div>
+                      <div className='plant-item-name-content'>
+                        <div className='icon-container'>
+                          <p>🍃</p>
+                        </div>
+                        <div className='plant-item-name'>
+                          <h3>{ plant.commonName }</h3>
+                        </div>
+                      </div>
+                      <div className='plant-item-watered-content'>
+                        <div className='icon-container'>
+                          <p>💧</p>
+                        </div>
+                        <div className='plant-item-watered'>
+                          <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
+                          <div className='edit-icon-container'>
+                            <button>✏️</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )
+                })}
               </div>
-            )
-            })}
-          </div>
-        </div>
+            </div>
+        </Switch>
       </div>
     )
   }
