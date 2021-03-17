@@ -42,7 +42,7 @@ class Plants extends Component {
           return (
             <div key={ plant._id } className='plant-item'>
               <div className='plant-item-img'>
-                <img src={ plant.image } alt={ plant.commonName } />
+                <img className='card-img' src={ plant.image } alt={ plant.commonName } />
               </div>
               <div className='plant-item-name-content'>
                 <div className='icon-container'>
