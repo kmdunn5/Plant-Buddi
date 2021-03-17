@@ -5,6 +5,7 @@ class AddForm extends Component {
         super(props)
         this.state = {
             nickName: '',
+            image: '',
             lastWatered: '',
             howOftenToWater: '',
             lastFertilized: '',
@@ -29,15 +30,27 @@ class AddForm extends Component {
     //             'Content-Type': 'application/json'
     //         },
     //         body: JSON.stringify({ 
-    //             title: this.state.title,
-    //             url: this.state.url
+    //             commonName: '',
+    //             nickName: '',
+    //             scientificName: '',
+    //             image: '',
+    //             lastWatered: '',
+    //             howOftenToWater: '',
+    //             lastFertilized: '',
+    //             lightingRequirements: '',
+    //             notes: ''
     //         })
     //     }).then(res => res.json())
     //     .then(resJson => {
     //         this.props.handleAdd(resJson);
     //         this.setState({
-    //             title: '',
-    //             url: ''
+    //             nickName: '',
+    //             image: '',
+    //             lastWatered: '',
+    //             howOftenToWater: '',
+    //             lastFertilized: '',
+    //             lightingRequirements: '',
+    //             notes: ''
     //         });
     //     }).catch (error => console.log({ 'Error': error }))
     // };
