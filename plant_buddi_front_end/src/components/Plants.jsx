@@ -10,9 +10,14 @@ class Plants extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      plants: []
+      plants: [],
+      foundPlants: [],
+      search: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   componentDidMount(){
     this.getPlants()
   }
@@ -28,10 +33,35 @@ class Plants extends Component {
        err=> console.log(err))
   }
 
+  handleChange = (e) => {
+    this.setState({
+        [e.target.id]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    let searchParam = this.state.search
+    fetch(baseURL + '/plants/search/' + searchParam)
+    .then(data => { return data.json() }, err => console.log(err))
+    .then(parsedData => this.setState({
+        foundPlants: parsedData.data,
+        search: ''
+    }), err => console.log(err));
+  }
+
   render() {
     return (
       <div>
-        <Search />
+        <div className='search-container'>
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor='search'>Search for a Plant Buddi: </label>
+            <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
+            <input type="submit" value="Search"/>
+          </form>
+          <Search foundPlants={this.state.foundPlants}/>
+        </div>
         <div className='main-content'>
           <h2>Your Buddies</h2>
           <div className='plant-item-grid'>
