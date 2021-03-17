@@ -4,10 +4,22 @@ class AddForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            nickName: ''
-            
+            nickName: '',
+            lastWatered: '',
+            howOftenToWater: '',
+            lastFertilized: '',
+            lightingRequirements: '',
+            notes: ''
         }
+        this.handleChange = this.handleChange.bind(this)
     }
+
+    handleChange(e) {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
     // handleSubmit(e) {
     //     e.preventDefault();
 
@@ -36,19 +48,20 @@ class AddForm extends Component {
                 <h3>{this.props.plant.common_name} - <span>{this.props.plant.scientific_name}</span></h3>
                 <form>
                     <label htmlFor="nickName"></label>
-                    <input type="text" name="nickName" id="nickName"/>
+                    <input type="text" name="nickName" id="nickName" onChange={this.handleChange}/>
                     <label htmlFor="image"></label>
-                    <input type="text" name="image" id="image"/>
+                    <input type="text" name="image" id="image" onChange={this.handleChange}/>
                     <label htmlFor="lastWatered"></label>
-                    <input type="text" name="lastWatered" id="lastWatered"/>
+                    <input type="text" name="lastWatered" id="lastWatered" onChange={this.handleChange}/>
                     <label htmlFor="howOftenToWater"></label>
-                    <input type="text" name="howOftenToWater" id="howOftenToWater"/>
+                    <input type="text" name="howOftenToWater" id="howOftenToWater" onChange={this.handleChange}/>
                     <label htmlFor="lastFertilized"></label>
-                    <input type="text" name="lastFertilized" id="lastFertilized"/>
+                    <input type="text" name="lastFertilized" id="lastFertilized" onChange={this.handleChange}/>
                     <label htmlFor="lightingRequirements"></label>
-                    <input type="text" name="lightingRequirements" id="lightingRequirements"/>
-                    <label htmlFor=""></label>
-                    <input type="text" name="" id=""/>
+                    <input type="text" name="lightingRequirements" id="lightingRequirements" onChange={this.handleChange}/>
+                    <label htmlFor="notes"></label>
+                    <input type="text" name="notes" id="notes" onChange={this.handleChange}/>
+                    <input type="submit" value="Add Plant"/>
                 </form>
             </div>
         )
