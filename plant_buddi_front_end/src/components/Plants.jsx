@@ -32,7 +32,7 @@ class Plants extends Component {
       <div>
       <div className='search-container'>
         <h2>Search for a Plant Buddi</h2>
-        <input type='text' placeholder = "Enter your plant's type"/>
+        <input className='search-bar' type='text' placeholder = "Enter your plant's type"/>
         <input type='submit' value='Search'/>
         </div>
       <div className='main-content'>
@@ -42,7 +42,7 @@ class Plants extends Component {
           return (
             <div key={ plant._id } className='plant-item'>
               <div className='plant-item-img'>
-                <img src={ plant.image } alt={ plant.commonName } />
+                <img className='card-img' src={ plant.image } alt={ plant.commonName } />
               </div>
               <div className='plant-item-name-content'>
                 <div className='icon-container'>

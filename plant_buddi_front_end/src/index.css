@@ -24,6 +24,14 @@ body {
   margin: 52px auto;
 }
 
+.search-container {
+  text-align: center;
+}
+
+.search-bar {
+  border: 2px solid #002500;
+}
+
 .plant-item {
   /* background-color: #FBF1EF; */
   border: 2px solid #002500;
@@ -35,10 +43,13 @@ body {
 
 
 .header-content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #598392;
-  text-align: center;
   color: rgb(242, 242, 242);
 }
+
 
 .card-img {
   width: 100%
