@@ -39,35 +39,40 @@ class Plants extends Component {
             return (
               <div key={ plant._id } className='plant-item'>
                 <div className='plant-item-img'>
-                  <img src={ plant.image } alt={ plant.commonName } />
+                  <img className='card-img' src={ plant.image } alt={ plant.commonName } />
                 </div>
                 <div className='plant-item-name-content'>
                   <div className='icon-container'>
                     <p>🍃</p>
                   </div>
-                  <div className='plant-item-name'>
-                    <h3>{ plant.commonName }</h3>
+                  <div className='plant-item-name-content'>
+                    <div className='icon-container'>
+                      <p>🍃</p>
+                    </div>
+                    <div className='plant-item-name'>
+                      <h3>{ plant.commonName }</h3>
+                    </div>
                   </div>
-                </div>
-                <div className='plant-item-watered-content'>
-                  <div className='icon-container'>
-                    <p>💧</p>
-                  </div>
-                  <div className='plant-item-watered'>
-                    <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
-                    <div className='edit-icon-container'>
-                      <button>✏️</button>
+                  <div className='plant-item-watered-content'>
+                    <div className='icon-container'>
+                      <p>💧</p>
+                    </div>
+                    <div className='plant-item-watered'>
+                      <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
+                      <div className='edit-icon-container'>
+                        <button>✏️</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              )
+            )
             })}
           </div>
         </div>
       </div>
     )
-  }    
+  }
 }
         
 
