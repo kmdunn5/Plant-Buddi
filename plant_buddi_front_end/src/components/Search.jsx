@@ -26,12 +26,19 @@ class Search extends Component {
             selectedPlant: plant
         })
     }
+
+    resetSearch() {
+        this.setState({
+            addSelected: false,
+            selectedPlant: ''
+        })
+    }
     
     render() {
         return (
             <div className='search-container'>
                 {this.state.addSelected ? 
-                <AddForm plant={this.state.selectedPlant}/> :
+                <AddForm plant={this.state.selectedPlant} handleAdd={this.props.handleAdd} resetSearch={this.props.resetSearch}/> :
                 <div className='plant-item-grid'>
                 {this.props.foundPlants.map(plant => {
                     return(

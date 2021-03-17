@@ -20,7 +20,8 @@ class AddForm extends Component {
             lightingRequirements: '',
             notes: ''
         }
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
@@ -51,6 +52,7 @@ class AddForm extends Component {
         }).then(res => res.json())
         .then(resJson => {
             this.props.handleAdd(resJson);
+            this.props.resetSearch()
             this.setState({
                 nickName: '',
                 image: '',
@@ -67,7 +69,7 @@ class AddForm extends Component {
         return(
             <div>
                 <h3>{this.props.plant.common_name} - <span>{this.props.plant.scientific_name}</span></h3>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label htmlFor="nickName">Nick Name: </label>
                     <input type="text" name="nickName" id="nickName" onChange={this.handleChange}/>
                     <label htmlFor="image">Image: </label>
