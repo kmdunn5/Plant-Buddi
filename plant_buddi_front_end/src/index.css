@@ -40,6 +40,10 @@ body {
   color: rgb(242, 242, 242);
 }
 
+.card-img {
+  width: 100%
+}
+
 
 
 /* FOOTER STYLES */
