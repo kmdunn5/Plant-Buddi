@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import fetch from 'node-fetch'
+
+let baseURL = '';
+
+if (process.env.NODE_ENV === 'development') {
+  baseURL = 'http://localhost:3003';
+} else {
+  baseURL = 'heroku URL';
+};
 
 class Search extends Component {
     constructor(props) {
@@ -19,7 +28,7 @@ class Search extends Component {
         e.preventDefault();
 
         let searchParam = this.state.search
-        fetch('https://trefle.io/api/v1/plants?token=h3BUvEszyxEYn8KbbVH31pgzKkRprttDHEkW177_73A&filter[common_name]=' + searchParam)
+        fetch(baseURL + '/plants/search/' + searchParam)
         .then(data => { return data.json() }, err => console.log(err))
         .then(parsedData => console.log(parsedData), err => console.log(err));
     }
