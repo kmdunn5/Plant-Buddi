@@ -5,8 +5,11 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="main-content">
-        <h1>Login</h1>
+      <div>
+      <div className='header-container-login'>
+        <h1 className='login-text'>Login</h1>
+        </div>
+        <div className="main-content">
         <div className='form-content'>
           <form>
             <div className='input-couple'>
@@ -23,6 +26,7 @@ class Login extends Component {
             </div>
           </form>
         </div>
+      </div>
       </div>
     )
   }
