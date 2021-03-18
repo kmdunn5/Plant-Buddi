@@ -14,7 +14,7 @@ class AddForm extends Component {
         this.state = {
             nickName: '',
             image: this.props.plant.image_url,
-            lastWatered: '',
+            lastWatered: 'Not Watered Yet',
             howOftenToWater: '',
             lastFertilized: '',
             lightingRequirements: '',
@@ -51,6 +51,7 @@ class AddForm extends Component {
             })
         }).then(res => res.json())
         .then(resJson => {
+            console.log(resJson)
             this.props.handleAdd(resJson);
             this.props.resetSearch()
             this.setState({
