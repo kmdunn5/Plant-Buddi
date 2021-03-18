@@ -12,8 +12,11 @@ class Header extends Component {
         <div className='app-icon-container2'></div>
         </div>
         <h4>Plant Care Tracker</h4>
-        <button>Sign Up</button>
-        <button>Log In</button>
+        <div className='header-links'>
+        <h2><a href='#'>Home</a></h2>
+        <h2><a href='#'>Sign Up</a></h2>
+        <h2><a href='#'>Log In</a></h2>
+        </div>
       </header>
     )
   }

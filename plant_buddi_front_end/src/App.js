@@ -15,8 +15,8 @@ class App extends Component {
     return (
       <div>
         < Header />
-        {/* < Home /> */}
-        < Plants />
+        < Home />
+        {/* < Plants /> */}
         < Footer />
       </div>
     )

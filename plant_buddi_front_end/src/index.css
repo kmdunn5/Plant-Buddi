@@ -157,6 +157,11 @@ label {
   color: rgb(242, 242, 242);
 }
 
+.header-links {
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+}
 
 .card-img {
   width: 100%
@@ -167,7 +172,6 @@ label {
 /* FOOTER STYLES */
 
 .footer-content {
-  position: absolute;
   min-width: 100%;
   width: auto;
   height: auto;
