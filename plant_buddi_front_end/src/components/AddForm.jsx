@@ -14,7 +14,7 @@ class AddForm extends Component {
         this.state = {
             nickName: '',
             image: this.props.plant.image_url,
-            lastWatered: '',
+            lastWatered: 'Not Watered Yet',
             howOftenToWater: '',
             lastFertilized: '',
             lightingRequirements: '',
