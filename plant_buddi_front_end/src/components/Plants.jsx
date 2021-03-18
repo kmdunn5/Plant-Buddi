@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { Route, Switch } from 'react-router-dom'
 import Search from './Search'
+// import ShowPlant from './ShowPlant'
 
 
 let baseURL = 'http://localhost:3003'
@@ -63,6 +64,21 @@ class Plants extends Component {
     });
   };
 
+  // DELETE PLANT
+  deletePlant = ( idOfPlant ) => {
+    fetch( baseURL + '/plants/' + idOfPlant, {
+      method: 'DELETE'
+    }).then( response => {
+      const findIndex = this.state.plants.findIndex( ( plant ) => plant._id === idOfPlant )
+      const copyPlants = [ ...this.state.plants ]
+      copyPlants.splice( findIndex, 1 )
+      console.log( findIndex )
+      this.setState({ 
+        plants: copyPlants 
+      })
+    })
+  }
+
   render() {
     return (
       <div>
@@ -108,6 +124,7 @@ class Plants extends Component {
                     </div>
                   </div>
                 </div>
+                {/* < ShowPlant plant={ plant } deletePlant={ this.deletePlant }/> */}
               </div>
             )
             })}
