@@ -85,7 +85,7 @@ class Plants extends Component {
         <div className='search-container'>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='search'>Search for a Plant Buddi: </label>
-            <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
+            <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search} className='search'/>
             <input 
             className='search-button'
             type="submit" value="Search"/>
