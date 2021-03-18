@@ -6,6 +6,8 @@ import Plants from './components/Plants.jsx'
 import Home from './components/Home.jsx'
 import SignUp from './components/SignUp.jsx'
 import Login from './components/Login.jsx'
+import Search from './components/Search.jsx'
+
 
 class App extends Component {
 

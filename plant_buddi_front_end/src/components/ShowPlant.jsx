@@ -18,7 +18,7 @@ class ShowPlant extends Component {
           <h2>Your Plant Buddi</h2>
           <div className='user-action-options'>
             <button className='primary-button'>Edit</button>
-            <button className='secondary-button'>Delete</button>
+            <button className='secondary-button' onClick={ () => this.props.deletePlant( this.props.plant._id ) }>Delete</button>
           </div>
         </div>
         <div className='show-plant-container'>

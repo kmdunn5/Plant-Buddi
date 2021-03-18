@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { Route, Switch } from 'react-router-dom'
 import Search from './Search'
+// import ShowPlant from './ShowPlant'
 
 
 let baseURL = 'http://localhost:3003'
@@ -63,6 +64,21 @@ class Plants extends Component {
     });
   };
 
+  // DELETE PLANT
+  deletePlant = ( idOfPlant ) => {
+    fetch( baseURL + '/plants/' + idOfPlant, {
+      method: 'DELETE'
+    }).then( response => {
+      const findIndex = this.state.plants.findIndex( ( plant ) => plant._id === idOfPlant )
+      const copyPlants = [ ...this.state.plants ]
+      copyPlants.splice( findIndex, 1 )
+      console.log( findIndex )
+      this.setState({ 
+        plants: copyPlants 
+      })
+    })
+  }
+
   render() {
     return (
       <div>
@@ -70,7 +86,9 @@ class Plants extends Component {
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='search'>Search for a Plant Buddi: </label>
             <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
-            <input type="submit" value="Search"/>
+            <input 
+            className='search-button'
+            type="submit" value="Search"/>
           </form>
         </div>
         {this.state.searchState ? 
@@ -103,11 +121,12 @@ class Plants extends Component {
                     <div className='plant-item-watered'>
                       <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
                       <div className='edit-icon-container'>
-                        <button>✏️</button>
+                        <p>✏️</p>
                       </div>
                     </div>
                   </div>
                 </div>
+                {/* < ShowPlant plant={ plant } deletePlant={ this.deletePlant }/> */}
               </div>
             )
             })}
