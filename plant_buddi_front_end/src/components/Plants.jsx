@@ -86,7 +86,9 @@ class Plants extends Component {
           <form onSubmit={this.handleSubmit}>
             <label htmlFor='search'>Search for a Plant Buddi: </label>
             <input type="text" name='search' id='search' placeholder="Enter Your Plant's Type" onChange={this.handleChange} value={this.state.search}/>
-            <input type="submit" value="Search"/>
+            <input 
+            className='search-button'
+            type="submit" value="Search"/>
           </form>
         </div>
         {this.state.searchState ? 
@@ -119,7 +121,7 @@ class Plants extends Component {
                     <div className='plant-item-watered'>
                       <p className='large-text'><span className='semibold-text'>Watered:</span> { plant.lastWatered }</p>
                       <div className='edit-icon-container'>
-                        <button>✏️</button>
+                        <p>✏️</p>
                       </div>
                     </div>
                   </div>

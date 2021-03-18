@@ -43,10 +43,12 @@ body {
 
 .search-container {
   text-align: center;
+  margin: 30px;
 }
 
-.search-bar {
-  border: 2px solid #002500;
+#search{
+  width: 300px;
+  height: 35px;
 }
 
 .plant-item-grid {
@@ -63,7 +65,7 @@ body {
   margin: 10px;
 }
 
-button {
+button, .search-button{
   background: #002500;
   color: white;
   border-radius: 5px;
