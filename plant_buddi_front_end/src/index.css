@@ -43,10 +43,12 @@ body {
 
 .search-container {
   text-align: center;
+  margin: 30px;
 }
 
-.search-bar {
-  border: 2px solid #002500;
+#search{
+  width: 300px;
+  height: 35px;
 }
 
 .plant-item-grid {
@@ -60,9 +62,10 @@ body {
   border: 2px solid #002500;
   border-radius: 5px;
   width: 25%;
+  margin: 10px;
 }
 
-button {
+button, .search-button{
   background: #002500;
   color: white;
   border-radius: 5px;
@@ -164,6 +167,7 @@ label {
 /* FOOTER STYLES */
 
 .footer-content {
+  position: absolute;
   min-width: 100%;
   width: auto;
   height: auto;
@@ -180,3 +184,4 @@ a {
   color: rgb(242, 242, 242);
   text-decoration: none;
 }
+
