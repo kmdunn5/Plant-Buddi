@@ -51,7 +51,6 @@ class AddForm extends Component {
             })
         }).then(res => res.json())
         .then(resJson => {
-            console.log(resJson)
             this.props.handleAdd(resJson);
             this.props.resetSearch()
             this.setState({
